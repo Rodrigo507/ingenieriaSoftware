@@ -24,9 +24,21 @@
 
 /* Enunciado */
 .enunciado {
-  margin: 10%;
-  margin-top: 5%;
-  height: 400px;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: 2%;
+  height: auto;
   width: auto;
-  background-color: red;
+  /* background-color: red; */
+}
+
+/* texto enunciado */
+.enunciado {
+  font-size: 25px;
+}
+/* btn siguiente */
+.btn-next {
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
 }
