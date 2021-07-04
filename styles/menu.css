@@ -20,7 +20,14 @@
   padding-bottom: 2%;
 }
 
-.btn {
+.btn-secondary {
   height: 80px;
   width: 250px;
+}
+
+.salir {
+  /* position: absolute; */
+  position: fixed;
+  top: 2px;
+  left: 4px;
 }
