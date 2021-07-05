@@ -15,13 +15,15 @@
 
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 .container h3 {
-  margin-top: 2%;
+  margin-top: 1%;
   padding: 5%;
 }
-
+/* Actividad #7 */
 /* Enunciado */
 .enunciado {
   margin-right: 10%;
@@ -41,4 +43,50 @@
   position: fixed;
   bottom: 1%;
   right: 1%;
+}
+
+/* Actividad #8 */
+.img {
+  display: flex;
+  justify-content: center;
+}
+.img {
+  /* background-color: blue; */
+  width: 50%;
+  height: auto;
+}
+
+#imagen {
+  width: 400px;
+  height: 400px;
+}
+
+.silaba {
+  /* background-color: magenta; */
+  width: 50%;
+  height: auto;
+  font-size: 65px;
+}
+.silaba {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.respuesta {
+  /* background-color: chartreuse; */
+  width: 50%;
+  height: 100px;
+}
+.respuesta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#rp {
+  height: 70%;
+  width: 70%;
+  font-size: 80px;
 }
