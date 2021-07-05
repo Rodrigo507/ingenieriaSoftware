@@ -12,7 +12,7 @@
 }
 
 .boton {
-  height: 400px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -24,6 +24,7 @@
 .btn-secondary {
   height: 80px;
   width: 250px;
+  margin-top: 5px;
 }
 
 .salir {
