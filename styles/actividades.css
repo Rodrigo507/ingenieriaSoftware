@@ -35,9 +35,14 @@
 }
 
 /* texto enunciado */
-.enunciado {
+p {
   font-size: 25px;
 }
+input {
+  height: 80%;
+  width: 50px;
+}
+
 /* btn siguiente */
 .btn-next {
   position: fixed;
