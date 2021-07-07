@@ -111,3 +111,39 @@ input {
   width: 70%;
   font-size: 20px;
 }
+
+/* Actividad 10 */
+/* .container {
+  background-color: red;
+} */
+.elementos {
+  height: auto;
+  width: auto;
+}
+.elementos p {
+  margin-right: 5px;
+  margin-left: 5px;
+  align-content: stretch;
+}
+
+.elementos {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.test {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 35px;
+}
+.test input {
+  width: 500px;
+  margin: 5px;
+  font-size: 20px;
+}
+.test .btn-next {
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+}
