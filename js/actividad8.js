@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ['ne', 'car'],
     ['ce', 'rra', 'du', 'ras'],
   ];
-  const correctas = ['Gato', 'Perro', 'Delfin', 'Unos', 'ahora', 'carne', 'cerradura'];
+  const correctas = ['Gato', 'Perro', 'Delfin', 'Unos', 'Ahora', 'Carne', 'Cerradura'];
   var conrrectasCont = 0;
   cambioCantidadTexto(cont);
   $('#myModal').modal('show');
@@ -47,9 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     if (e.target.classList.contains('btn-term')) {
+      let contenido = '';
       evaluacion(cont - 1);
       hiddenBtnNext(e);
-      modalResult.innerHTML = `Total de puntos obtenidos: ${conrrectasCont}`;
+      contenido += `Total de puntos obtenidos: ${conrrectasCont} <br><br> <p>Respuestas correctas</p>`;
+      correctas.forEach((element) => {
+        contenido += element + '<br>';
+      });
+
+      modalResult.innerHTML = contenido;
     }
   });
   //Cambia la cantidad de enunciado faltantes
@@ -83,5 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       audioIncorrecto.play();
     }
+    inputs.value = '';
   }
 });
