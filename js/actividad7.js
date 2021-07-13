@@ -2,12 +2,20 @@ document.addEventListener('DOMContentLoaded', function (e) {
   var enunciado = document.querySelector('#enunciado');
   const container = document.querySelector('.enunciado');
   const cantActividad = document.querySelector('.cantPregunta');
+  const btnterm = document.querySelector('.btn-term');
+  const modalResult = document.querySelector('.modal-body');
+  // const modalVideo = document.querySelector('#myModal');
+  var correctas = 0;
+
   var parrafos = [
-    'Había una vez un niño al que siempre le gustaba correr* tanto era así que hasta dentro de la clase lo hacía* un día* la profesora le dijo que como no se estuviera quieto le iba a tener que quitar la silla* ',
-    'He buscado todas las opciones posibles* sin embargo* todavía no he dado con la correcta* ',
-    'Lista para la compra* leche* café y pastas',
-    'El en prado se estaba muy a gusto* tanto que los animalitos no se querían ir* De pronto comenzaron a venir las nubes* eso lo cambiaba todo.',
+    'El en prado se estaba muy a gusto* tanto que los animalitos no se querían ir* De pronto comenzaron a venir las nubes* eso lo cambiaba todo*',
+    'Me gusta merendar galletas, leche* zumo, pan y mantequilla* Aunque mi madre siempre dice que es mejor merendar plátano, naranja* aguacate y pan integra.',
+    'He buscado todas las opciones posibles* sin embargo, todavía no he dado con la correcta*',
+    'Lista de deberes* leer el cuento, hacer las sumas y las restas y terminar el dictado.',
+    'Propósitos para esta semana* jugar a la pelota con mamá, hacer un bizcocho con papá y ver los dibujos con Lola.',
   ];
+  var respuestaCorrecta = [[',', '.', ',', '.'], [',', '.', ','], [';', '.'], [':'], [':']];
+  var cantidadParrafos = parrafos.length;
   var campo = 1;
   var idParrafo = 1;
 
@@ -15,17 +23,29 @@ document.addEventListener('DOMContentLoaded', function (e) {
   cracionDeCampos(0);
   cambioCantidadTexto(0);
 
+  //Cargar modal de video
+  $('#myModal').modal('show');
+  // modalVideo.modal
+
   // Cambio de parrafo
   container.addEventListener('click', (e) => {
     if (e.target.classList.contains('btn-next')) {
-      if (idParrafo < parrafos.length) {
+      evaluacion(idParrafo - 1);
+      if (idParrafo < cantidadParrafos) {
         cambioCantidadTexto(idParrafo);
         cracionDeCampos(idParrafo);
         idParrafo++;
-        if (idParrafo === parrafos.length) {
+        if (idParrafo === cantidadParrafos) {
           hiddenBtnNext(e);
+          btnterm.removeAttribute('hidden');
+          console.log(btnterm);
         }
       }
+    }
+    if (e.target.classList.contains('btn-term')) {
+      evaluacion(idParrafo - 1);
+      hiddenBtnNext(e);
+      modalResult.innerHTML = `Total de puntos optenidos: ${correctas}`;
     }
   });
 
@@ -46,11 +66,19 @@ document.addEventListener('DOMContentLoaded', function (e) {
   }
   //Cambia la cantidad de enunciado faltantes
   function cambioCantidadTexto(cant) {
-    cantActividad.innerHTML = `${cant + 1}/${parrafos.length}`;
+    cantActividad.innerHTML = `${cant + 1}/${cantidadParrafos}`;
+  }
+  //Ocultar boton next
+  function hiddenBtnNext(e) {
+    e.target.style.visibility = 'hidden';
+  }
+
+  function evaluacion(indice) {
+    var inputs = document.querySelectorAll('input');
+    for (var x = 0; x < inputs.length; x++) {
+      if (respuestaCorrecta[indice][x] === inputs[x].value) {
+        correctas++;
+      }
+    }
   }
 });
-
-//Ocultar boton next
-function hiddenBtnNext(e) {
-  e.target.style.visibility = 'hidden';
-}
