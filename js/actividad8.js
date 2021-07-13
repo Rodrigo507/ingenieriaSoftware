@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const silaba = document.querySelector('.silaba');
   const cantActividad = document.querySelector('.cantPregunta');
   const btnterm = document.querySelector('.btn-term');
-  const modalResult = document.querySelector('.modal-body');
+  const modalResult = document.getElementById('modal-body');
   let cont = 1; //Indice de imagen
   let cantImagen = 6; //Cantidad total de imagen a mostrar
   let fraces = [
@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ['ne', 'car'],
     ['ce', 'rra', 'du', 'ras'],
   ];
-  const correstas = ['Gato', 'Perro', 'Delfin', 'Unos', 'ahora', 'carne', 'cerradura'];
-
+  const correctas = ['Gato', 'Perro', 'Delfin', 'Unos', 'ahora', 'carne', 'cerradura'];
+  var conrrectasCont = 0;
   cambioCantidadTexto(cont);
   $('#myModal').modal('show');
   container.addEventListener('click', (e) => {
@@ -47,9 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     if (e.target.classList.contains('btn-term')) {
-      evaluacion(idParrafo - 1);
+      evaluacion(cont - 1);
       hiddenBtnNext(e);
-      modalResult.innerHTML = `Total de puntos optenidos: ${correctas}`;
+      modalResult.innerHTML = `Total de puntos obtenidos: ${conrrectasCont}`;
     }
   });
   //Cambia la cantidad de enunciado faltantes
@@ -75,11 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function evaluacion(indice) {
     var inputs = document.querySelector('input');
-
-    if (correstas[indice] === inputs.value) {
-      console.log('Correcta');
-
-      correctas++;
+    var audioCorrecto = new Audio('../audio/correcto.mp3');
+    var audioIncorrecto = new Audio('../audio/incorrecto.mp3');
+    if (correctas[indice].toLowerCase() === inputs.value.toLowerCase()) {
+      audioCorrecto.play();
+      conrrectasCont++;
+    } else {
+      audioIncorrecto.play();
     }
   }
 });

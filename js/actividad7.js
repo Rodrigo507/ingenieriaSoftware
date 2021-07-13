@@ -74,11 +74,20 @@ document.addEventListener('DOMContentLoaded', function (e) {
   }
 
   function evaluacion(indice) {
+    var procentaje = 0;
     var inputs = document.querySelectorAll('input');
+    var audioCorrecto = new Audio('../audio/correcto.mp3');
+    var audioIncorrecto = new Audio('../audio/incorrecto.mp3');
     for (var x = 0; x < inputs.length; x++) {
       if (respuestaCorrecta[indice][x] === inputs[x].value) {
         correctas++;
+        procentaje++;
       }
+    }
+    if (procentaje >= 3) {
+      audioCorrecto.play();
+    } else {
+      audioIncorrecto.play();
     }
   }
 });
