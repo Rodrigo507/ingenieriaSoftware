@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.container');
   const imagen = document.getElementById('imagen');
   const silaba = document.querySelector('.silaba');
+  const cantActividad = document.querySelector('.cantPregunta');
   let cont = 1; //Indice de imagen
   let cantImagen = 6; //Cantidad total de imagen a mostrar
   let fraces = [
@@ -12,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ['ne', 'car'],
     ['ce', 'rra', 'du', 'ras'],
   ];
+
+  cambioCantidadTexto(cont);
 
   container.addEventListener('click', (e) => {
     //Accion del boton next
@@ -26,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //Cambio de imagen
         cambioImagen(cont);
+        cambioCantidadTexto(cont + 1);
 
         //Agregrar las cilabas
         fraces[cont - 1].forEach((element) => {
@@ -38,6 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+  //Cambia la cantidad de enunciado faltantes
+  function cambioCantidadTexto(cant) {
+    cantActividad.innerHTML = `${cant}/${fraces.length + 1}`;
+  }
 });
 
 //Funcion de cambiar imagen
