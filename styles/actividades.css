@@ -153,3 +153,12 @@ input {
 #audio {
   margin-top: 105px;
 }
+
+.mascota {
+  position: fixed;
+  left: 2%;
+  top: 20%;
+}
+.mascota {
+  width: 15%;
+}
