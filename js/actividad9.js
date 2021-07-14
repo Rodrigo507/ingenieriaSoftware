@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   cambioCantidadTexto(1);
-  // $('#myModal').modal('show');
+  $('#myModal').modal('show');
   container.addEventListener('click', (e) => {
     //Accion del boton next
     if (e.target.classList.contains('btn-next')) {
@@ -27,18 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         cambioAudio(cont);
         cambioCantidadTexto(cont);
       }
-      // if (cantAudio === x) {
-      //   evaluacion(cont);
-      //   hiddenBtnNext(e);
-      //   btnterm.removeAttribute('hidden');
-      // }
-
-      // //   Ocultamos el boton
-      // if (cont <= cantAudio) {
-      //   evaluacion(cont);
-      //   cambioAudio(cont);
-      //   cambioCantidadTexto(cont);
-      // }
       indiceGeneral++;
       cont++;
     }
