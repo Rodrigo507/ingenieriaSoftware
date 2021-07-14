@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'Manuel apago la computadora',
   ];
 
-  // $('#myModal').modal('show');
+  $('#myModal').modal('show');
   container.addEventListener('click', (e) => {
     //Accion del boton terminar
 
