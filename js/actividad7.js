@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
         if (idParrafo === cantidadParrafos) {
           hiddenBtnNext(e);
           btnterm.removeAttribute('hidden');
-          console.log(btnterm);
         }
       }
     }

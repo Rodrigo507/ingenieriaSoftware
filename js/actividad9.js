@@ -72,8 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
     var inputs = document.querySelector('textarea');
     var audioCorrecto = new Audio('../audio/correcto.mp3');
     var audioIncorrecto = new Audio('../audio/incorrecto.mp3');
-    // console.log(inputs.value.toLowerCase());
-    // console.log(correctas[0].toLowerCase());
 
     if (correctas[indice].toLowerCase() === inputs.value.toLowerCase()) {
       audioCorrecto.play();

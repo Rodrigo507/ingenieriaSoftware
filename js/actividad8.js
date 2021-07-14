@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
           let parrafo = document.createElement('p');
           parrafo.textContent = element;
           silaba.appendChild(parrafo);
-          //   console.log(element);
         });
         cont++;
       }
