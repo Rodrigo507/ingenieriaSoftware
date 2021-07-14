@@ -35,9 +35,9 @@
 }
 
 .mascota {
-  height: 80px;
-  width: 100px;
-  background-color: blue;
+  height: 300px;
+  width: 400px;
+  /* background-color: blue; */
 
   position: absolute;
   top: 50%;
