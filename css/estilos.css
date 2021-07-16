@@ -1,0 +1,52 @@
+body {
+    background: #7CDBD5;
+    font-family: monospace;
+}
+#tituloP {
+    font-weight: bold;
+}
+#instrucciones {
+    font-family: monospace;
+}
+#btnAceptar {
+    background: #F53240;
+}
+#parrafoP2 {
+    background: #F53240;
+}
+#btnSalir {
+    background: #02C8A7;
+}
+#btnAyuda {
+    background: #02C8A7;
+}
+#conPalabra {
+    background: #02c8a7;
+}
+#headerT {
+    background: #F53240;
+}
+#headerA {
+    background: #F9BE02;
+}
+#contenedorResP2 {
+    background: #02C8A7;
+}
+#parrafoP3{
+    background: #02C8A7;
+}
+#conPregunta {
+    background: #F53240;
+}
+#conRespuesta {
+    background: #02C8A7;
+}
+#conAudio {
+    background: #F9BE02;
+}
+#btnSelec1, #btnSelec2 {
+    background: #02C8A7;
+}
+#modalCon {
+    background: #7CDBD5;
+}
