@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ['nos', 'u'],
     ['a', 'ho', 'ra'],
     ['ne', 'car'],
-    ['ce', 'rra', 'du', 'ras'],
+    ['ce', 'rra', 'du', 'ra'],
   ];
   const correctas = ['Gato', 'Perro', 'Delfin', 'Unos', 'Ahora', 'Carne', 'Cerradura'];
   var conrrectasCont = 0;
@@ -84,6 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
     var inputs = document.querySelector('input');
     var audioCorrecto = new Audio('../audio/ecorrecto.mp3');
     var audioIncorrecto = new Audio('../audio/eincorrecto.mp3');
+    console.log(inputs.value.toLowerCase());
+    console.log(correctas[indice]);
     if (correctas[indice].toLowerCase() === inputs.value.toLowerCase()) {
       audioCorrecto.play();
       conrrectasCont++;
