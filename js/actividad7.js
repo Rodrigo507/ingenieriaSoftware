@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
   const modalResult = document.querySelector('.modal-body');
   // const modalVideo = document.querySelector('#myModal');
   var correctas = 0;
+  var poinstGlobal = getPoints();
 
   var parrafos = [
     'El en prado se estaba muy a gusto* tanto que los animalitos no se querían ir* De pronto comenzaron a venir las nubes* eso lo cambiaba todo*',
@@ -45,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
       evaluacion(idParrafo - 1);
       hiddenBtnNext(e);
       modalResult.innerHTML = `Total de puntos optenidos: ${correctas}`;
+      savePoints(correctas);
     }
   });
 
@@ -83,10 +85,18 @@ document.addEventListener('DOMContentLoaded', function (e) {
         procentaje++;
       }
     }
-    if (procentaje >= 3) {
+    if (procentaje != 0) {
       audioCorrecto.play();
     } else {
       audioIncorrecto.play();
     }
+  }
+  function savePoints(pts) {
+    total = Number(pts) + Number(poinstGlobal);
+    localStorage.setItem('points', total);
+    console.log(total);
+  }
+  function getPoints() {
+    return localStorage.getItem('points');
   }
 });

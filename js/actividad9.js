@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'Me contaron que hace tiempo durante una calida noche de verano una estrella recien nacida ilumino de tal manera a una luciernaga que volaba en la tranquilidad de la campiña',
     'Que parecía haberla envuelto en una autentico abrazo de luz con voz suave pero profunda',
   ];
-
+  var poinstGlobal = getPoints();
   cambioCantidadTexto(1);
   $('#myModal').modal('show');
   container.addEventListener('click', (e) => {
@@ -68,5 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
       audioIncorrecto.play();
     }
     inputs.value = '';
+  }
+  function savePoints(pts) {
+    total = Number(pts) + Number(poinstGlobal);
+    localStorage.setItem('points', total);
+    console.log(total);
+  }
+  function getPoints() {
+    return localStorage.getItem('points');
   }
 });

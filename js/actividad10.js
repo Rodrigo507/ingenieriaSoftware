@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let cont = 2; //Indice de audio
   let cantAudio = 2; //Cantidad total de audio a rproducir dinamicamente
   var conrrectasCont = 0;
+  var poinstGlobal = getPoints();
   const respuestaCorrecta = [
     'Mañana tenemos el campamento',
     'Me compre una nueva bicicleta',

@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   const correctas = ['Gato', 'Perro', 'Delfin', 'Unos', 'Ahora', 'Carne', 'Cerradura'];
   var conrrectasCont = 0;
+  var poinstGlobal = getPoints();
   cambioCantidadTexto(cont);
   $('#myModal').modal('show');
   container.addEventListener('click', (e) => {
@@ -55,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       modalResult.innerHTML = contenido;
+      savePoints(conrrectasCont);
     }
   });
   //Cambia la cantidad de enunciado faltantes
@@ -89,5 +91,13 @@ document.addEventListener('DOMContentLoaded', () => {
       audioIncorrecto.play();
     }
     inputs.value = '';
+  }
+  function savePoints(pts) {
+    total = Number(pts) + Number(poinstGlobal);
+    localStorage.setItem('points', total);
+    console.log(total);
+  }
+  function getPoints() {
+    return localStorage.getItem('points');
   }
 });
