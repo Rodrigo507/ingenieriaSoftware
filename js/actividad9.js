@@ -69,11 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     inputs.value = '';
   }
+  //Guarda los puntos en localstorage
   function savePoints(pts) {
     total = Number(pts) + Number(poinstGlobal);
     localStorage.setItem('points', total);
     console.log(total);
   }
+  //Obtiene los puntos de localStorgate
   function getPoints() {
     return localStorage.getItem('points');
   }

@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', function (e) {
+  //Elementos del doom html
   var enunciado = document.querySelector('#enunciado');
   const container = document.querySelector('.enunciado');
   const cantActividad = document.querySelector('.cantPregunta');
   const btnterm = document.querySelector('.btn-term');
   const modalResult = document.querySelector('.modal-body');
-  // const modalVideo = document.querySelector('#myModal');
+
   var correctas = 0;
   var poinstGlobal = getPoints();
 
@@ -26,10 +27,10 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
   //Cargar modal de video
   $('#myModal').modal('show');
-  // modalVideo.modal
 
   // Cambio de parrafo
   container.addEventListener('click', (e) => {
+    //Eventos de click sobre bototones
     if (e.target.classList.contains('btn-next')) {
       evaluacion(idParrafo - 1);
       if (idParrafo < cantidadParrafos) {
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
         }
       }
     }
+    //Finalizacion
     if (e.target.classList.contains('btn-term')) {
       evaluacion(idParrafo - 1);
       hiddenBtnNext(e);
@@ -49,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
       savePoints(correctas);
     }
   });
-
+  //funcion que incerta los input en el parrafo con su id
   function cracionDeCampos(iParrafo) {
     let fragment = '';
     for (var i = 0; i < parrafos[iParrafo].length; i++) {
@@ -91,11 +93,13 @@ document.addEventListener('DOMContentLoaded', function (e) {
       audioIncorrecto.play();
     }
   }
+  //Guarda los puntos en localstorage
   function savePoints(pts) {
     total = Number(pts) + Number(poinstGlobal);
     localStorage.setItem('points', total);
     console.log(total);
   }
+  //Obtiene los puntos de localStorgate
   function getPoints() {
     return localStorage.getItem('points');
   }
