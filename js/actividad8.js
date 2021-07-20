@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function evaluacion(indice) {
     var inputs = document.querySelector('input');
-    var audioCorrecto = new Audio('../audio/correcto.mp3');
-    var audioIncorrecto = new Audio('../audio/incorrecto.mp3');
+    var audioCorrecto = new Audio('../audio/ecorrecto.mp3');
+    var audioIncorrecto = new Audio('../audio/eincorrecto.mp3');
     if (correctas[indice].toLowerCase() === inputs.value.toLowerCase()) {
       audioCorrecto.play();
       conrrectasCont++;

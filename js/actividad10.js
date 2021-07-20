@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function evaluacion() {
     var procentaje = 0;
     var inputs = document.querySelectorAll('input');
-    var audioCorrecto = new Audio('../audio/correcto.mp3');
-    var audioIncorrecto = new Audio('../audio/incorrecto.mp3');
+    var audioCorrecto = new Audio('../audio/ecorrecto.mp3');
+    var audioIncorrecto = new Audio('../audio/eincorrecto.mp3');
 
     for (var x = 0; x < inputs.length; x++) {
       if (respuestaCorrecta[x].toLowerCase() === inputs[x].value.toLowerCase()) {
